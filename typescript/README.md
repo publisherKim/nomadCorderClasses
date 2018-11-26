@@ -41,3 +41,33 @@
   tsonfig 파일의 작성들은 인터넷을 참고해야 한다.
 ```
 
+## first steps with typescript
+```typescript
+  /*
+    규칙에 맞지 않을 경우 타입스크립트는 경고 메세지를 알려주고
+    컴파일 명령을 수행하지 않는다.
+
+    사람이 실수하는걸 미연에 방지 할 수 있다.
+  */
+  // correct
+  const sayHi = (name, age, gender) => {
+    console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
+  };
+
+  sayHi(name, age, gender);
+
+  // incorret
+  const sayHi = (name, age, gender) => {
+    console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
+  };
+
+  sayHi(name, age);
+
+  // optional parameters
+  const sayHi = (name, age, gender?) => {
+    console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
+  };
+
+  sayHi(name, age);
+
+```
