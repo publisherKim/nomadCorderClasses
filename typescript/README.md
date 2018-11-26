@@ -69,5 +69,37 @@
   };
 
   sayHi(name, age);
+```
 
+## Types in Typescript
+```typescript
+  /*
+    vscode plugin tsLint install
+    type을 지정함으로 이언어는 보다 어떤 것을 하는지 정확하게 알수 있다.
+  */
+  // parmater: type
+  const sayHi = (name: string, age: number, gender: string) => {
+    console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
+  };
+
+  sayHi('Nicolas', 444, 'male');
+
+  // window10은 아직 적용 안됨
+  "scripts": {
+    "start": "tsc-watch --onSuccess \" node dist/index.js\""
+  },
+  "devDependencies": {
+    "tsc-watch": "^1.0.30"
+  }
+  // tsconfig
+  {
+  "compileOptions": {
+    "module": "commonjs",
+    "target": "ES2015",
+    "sourceMap": true,
+    "outDir": "dist"  // folder path setting
+  },
+  "include": ["src/**/*"],  // 하위폴더 다 적용
+  "exclude": ["node_modules"]
+}
 ```
