@@ -1,18 +1,21 @@
-const name = 'Hong',
-  age = 24,
-  gender = 'male';
+class Human {
+  public name: string;
+  public age: number;
+  public gender: string;
 
-const sayHi = (name: string, age: number, gender: string): boolean => {
-  console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
-  return true;
+  constructor(name: string, age: number, gender: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+
+const lynn = new Human("Lynn", 17, "female");
+console.log('instance type: ', typeof lynn, 'instance spec: ', lynn);
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}`;
 };
 
-const sayHiVoid = (name: string, age: number, gender: string): void => {
-  console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
-};
-
-sayHi('Nicolas', 444, 'male');
-
-sayHiVoid(name, age, gender);
+console.log(sayHi(lynn));
 
 export {};

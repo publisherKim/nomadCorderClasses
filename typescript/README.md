@@ -103,3 +103,39 @@
   "exclude": ["node_modules"]
 }
 ```
+
+## Interfaces on Typescript
+```typescript
+  /*
+    interface:
+      타입을 간결하게 정리할수 있다.
+  */
+  interface Human {
+    name: string,
+    age: number,
+    gender: string
+  }
+
+  const person = {
+    name: 'nicolas',
+    gender: 'male',
+    age: 22
+  };
+
+
+  const sayHi = (person: Human): string => {
+    return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}`;
+  };
+```
+
+## Classes on Typesript part One
+```typescript
+  /*
+    인터페이스를 자바스크립트에 넣기 위해서 클래스를 활용함
+    public: default public
+    private: 밖에서 접근할수 없는 변수
+    protected: 파생클레스에서 접근가능, 외부접근 불가
+    readonly: 읽기 전용
+    static: 정적(공개) 변수(외부 접근 가능)
+  */
+```

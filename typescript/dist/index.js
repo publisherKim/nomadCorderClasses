@@ -1,13 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const name = 'Hong', age = 24, gender = 'male';
-const sayHi = (name, age, gender) => {
-    console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
-    return true;
+class Human {
+    constructor(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+}
+const lynn = new Human("Lynn", 17, "female");
+console.log('instance type: ', typeof lynn, 'instance spec: ', lynn);
+const sayHi = (person) => {
+    return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}`;
 };
-const sayHiVoid = (name, age, gender) => {
-    console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
-};
-sayHi('Nicolas', 444, 'male');
-sayHiVoid(name, age, gender);
+console.log(sayHi(lynn));
 //# sourceMappingURL=index.js.map
