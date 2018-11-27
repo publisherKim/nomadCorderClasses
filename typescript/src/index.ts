@@ -1,15 +1,30 @@
 import * as CryptoJS from 'crypto-js';
 
 class Block {
+  static caculateBlockHash = (
+    index: number,
+    previousHash: string,
+    timestamp: number,
+    data: string
+  ): string => {
+    return CryptoJS.SHA256(index + previousHash + timestamp + data), toString();
+  };
+
+  static validateStructure = (aBLock: Block): boolean => {
+    return (
+      typeof aBLock.index === "number" &&
+      typeof aBLock.hash === "string" &&
+      typeof aBLock.previousHash === "string" &&
+      typeof aBLock.data === "string" &&
+      typeof aBLock.timestamp === "number"
+    );
+  };
+
   public index: number;
   public hash: string;
   public previousHash: string;
   public data: string;
   public timestamp: number;
-
-  static caculateBlockHash = (index: number, previousHash: string, timestamp: number, data: string): string => {
-    return CryptoJS.SHA256(index + previousHash + timestamp + data),toString(); 
-  }
 
   constructor(
     index: number,
@@ -45,6 +60,36 @@ const createdNewBlock = (data: string): Block => {
   return newBlock;
 };
 
-console.log('block1: ', createdNewBlock("hello"), 'block2: ', createdNewBlock('bye bye'));
+const getHashforBlock = (aBlock: Block): string => Block.caculateBlockHash(aBlock.index, aBlock.previousHash, aBlock.timestamp, aBlock.data);
 
+const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
+  if(Block.validateStructure(candidateBlock)) {
+    console.log(1)
+    return false;
+  } else if(previousBlock.index + 1 !== candidateBlock.index) {
+    return false;
+  } else if(previousBlock.hash !== candidateBlock.previousHash) {
+    return false;
+  } else if (getHashforBlock(candidateBlock) !== candidateBlock.hash) {
+    return false
+  } else {
+    return true;
+  }
+};
+
+const addBlock = (candidateBlock: Block): void => {
+  if(isBlockValid(candidateBlock, getLatestBlock())) {
+    blockchain.push(candidateBlock);
+  }
+}
+
+// 생성전
+console.log("before: ", blockchain);
+
+// Blok 2 create
+addBlock(createdNewBlock("hi"))
+addBlock(createdNewBlock('bye bye'));
+
+// 생성후 
+console.log('after: ', blockchain);
 export {};

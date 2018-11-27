@@ -171,3 +171,13 @@
   class를 활용해서 
   어떻게 함수를 통해 새로운 인스턴스를 생성하는지 알수 있다.
 ```
+
+## validating Block Structure
+```
+  블럭의 구조가 올바른지 유효성 검사하기
+    - stati previousBlock func create(type check)
+    - isBlockValid 이전 블록과 현재 블록의 조건 검사하기
+
+  addBlock func
+    - valid check after 블록 생성
+```
