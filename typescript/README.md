@@ -164,5 +164,10 @@
       - getLatestBlock
       - getNewTimeStamp
   */
+```
 
+## creating a Block part three
+```
+  class를 활용해서 
+  어떻게 함수를 통해 새로운 인스턴스를 생성하는지 알수 있다.
 ```

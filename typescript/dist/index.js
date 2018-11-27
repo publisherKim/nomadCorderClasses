@@ -18,8 +18,14 @@ let blockchain = [genisisBlock];
 const getBlockchain = () => blockchain;
 const getLatestBlock = () => blockchain[blockchain.length - 1];
 const getNewTimeStamp = () => Math.round(new Date().getTime() / 1000);
-console.log("1: ", getBlockchain());
-console.log("2: ", getLatestBlock());
-console.log("3: ", getNewTimeStamp());
-console.log("4: ", getBlockchain());
+const createdNewBlock = (data) => {
+    const previousBlock = getLatestBlock();
+    const newIndex = previousBlock.index + 1;
+    const newTimestamp = getNewTimeStamp();
+    const newHash = Block.caculateBlockHash(newIndex, previousBlock.hash, newTimestamp, data);
+    const newBlock = new Block(newIndex, newHash, previousBlock.hash, data, newTimestamp);
+    return newBlock;
+};
+console.log('block1: ', createdNewBlock("hello"), 'block2: ', createdNewBlock('bye bye'));
+console.log(Block.caculateBlockHash(1, "hahah", 201231231, "hello"));
 //# sourceMappingURL=index.js.map
