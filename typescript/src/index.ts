@@ -10,15 +10,12 @@ class Block {
     return CryptoJS.SHA256(index + previousHash + timestamp + data), toString();
   };
 
-  static validateStructure = (aBLock: Block): boolean => {
-    return (
-      typeof aBLock.index === "number" &&
-      typeof aBLock.hash === "string" &&
-      typeof aBLock.previousHash === "string" &&
-      typeof aBLock.data === "string" &&
-      typeof aBLock.timestamp === "number"
-    );
-  };
+  static validateStructure = (aBLock: Block): boolean =>
+    typeof aBLock.index === "number" &&
+    typeof aBLock.hash === "string" &&
+    typeof aBLock.previousHash === "string" &&
+    typeof aBLock.timestamp === "number" &&
+    typeof aBLock.data === "string";
 
   public index: number;
   public hash: string;
@@ -63,8 +60,7 @@ const createdNewBlock = (data: string): Block => {
 const getHashforBlock = (aBlock: Block): string => Block.caculateBlockHash(aBlock.index, aBlock.previousHash, aBlock.timestamp, aBlock.data);
 
 const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
-  if(Block.validateStructure(candidateBlock)) {
-    console.log(1)
+  if(!Block.validateStructure(candidateBlock)) {
     return false;
   } else if(previousBlock.index + 1 !== candidateBlock.index) {
     return false;

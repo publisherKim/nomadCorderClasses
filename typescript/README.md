@@ -182,4 +182,5 @@
     - valid check after 블록 생성
   
   *** validateStructure 조건 검사할 필요 있음 ***
+  validatStructure 조건에 맞기떄문에 부정해야 했음 ...
 ```
