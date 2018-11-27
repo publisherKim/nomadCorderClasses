@@ -8,6 +8,7 @@
     "prestart": "tsc"
   },
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "ts-watch": "^1.0.8"
   }
 }

@@ -139,3 +139,17 @@
     static: 정적(공개) 변수(외부 접근 가능)
   */
 ```
+
+## Blockchain Creating Block
+```
+  simple blockchain create with typescript
+  Block chain spec
+    - index
+    - hash
+    - previousHash
+    - timestamp
+
+  class를 통해 인스턴스를 생성에 배열에 할당
+```
+
+## creatingBlok part Two
