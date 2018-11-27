@@ -29,6 +29,7 @@ const createdNewBlock = (data) => {
     const newTimestamp = getNewTimeStamp();
     const newHash = Block.caculateBlockHash(newIndex, previousBlock.hash, newTimestamp, data);
     const newBlock = new Block(newIndex, newHash, previousBlock.hash, data, newTimestamp);
+    addBlock(newBlock);
     return newBlock;
 };
 const getHashforBlock = (aBlock) => Block.caculateBlockHash(aBlock.index, aBlock.previousHash, aBlock.timestamp, aBlock.data);
@@ -57,8 +58,9 @@ const addBlock = (candidateBlock) => {
 // 생성전
 console.log("before: ", blockchain);
 // Blok 2 create
-addBlock(createdNewBlock("hi"));
-addBlock(createdNewBlock('bye bye'));
+createdNewBlock("second block");
+createdNewBlock('third block');
+createdNewBlock('fourth block');
 // 생성후 
 console.log('after: ', blockchain);
 //# sourceMappingURL=index.js.map

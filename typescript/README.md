@@ -184,3 +184,8 @@
   *** validateStructure 조건 검사할 필요 있음 ***
   validatStructure 조건에 맞기떄문에 부정해야 했음 ...
 ```
+
+## conclusion
+```
+  사용하는 함수 호출법 변경
+```

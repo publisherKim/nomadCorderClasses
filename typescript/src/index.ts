@@ -54,6 +54,7 @@ const createdNewBlock = (data: string): Block => {
   const newTimestamp: number = getNewTimeStamp();
   const newHash: string = Block.caculateBlockHash(newIndex, previousBlock.hash, newTimestamp, data);
   const newBlock: Block = new Block(newIndex, newHash, previousBlock.hash, data, newTimestamp);
+  addBlock(newBlock);
   return newBlock;
 };
 
@@ -83,8 +84,10 @@ const addBlock = (candidateBlock: Block): void => {
 console.log("before: ", blockchain);
 
 // Blok 2 create
-addBlock(createdNewBlock("hi"))
-addBlock(createdNewBlock('bye bye'));
+createdNewBlock("second block");
+createdNewBlock('third block');
+createdNewBlock('fourth block');
+
 
 // 생성후 
 console.log('after: ', blockchain);
