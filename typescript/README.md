@@ -180,4 +180,6 @@
 
   addBlock func
     - valid check after 블록 생성
+  
+  *** validateStructure 조건 검사할 필요 있음 ***
 ```
