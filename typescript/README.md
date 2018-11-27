@@ -153,3 +153,16 @@
 ```
 
 ## creatingBlok part Two
+```typescript
+  /*
+    yarn add crypto-js
+    를 활용하여 해시 만들기
+  */
+  /*
+    simple function create
+      - getBlockchain
+      - getLatestBlock
+      - getNewTimeStamp
+  */
+
+```
